@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Redirigiendo...</title>
+</head>
+<body>
+  <div>
+    <p>Redirigiendo...</p>
+  </div>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const from = params.get('from');
+
+    if (from === 'refresh') {
+      window.location.href = "streamdealer://onboarding_retry";
+    } else if (from === 'return') {
+      window.location.href = "streamdealer://onboarding_complete";
+    }
+  </script>
+</body>
+</html>
